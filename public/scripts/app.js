@@ -2,19 +2,29 @@
 
 console.log('App.js is running!');
 
-// JSX - JavaScript XML
-var template = React.createElement(
+var app = {
+    title: 'React Learning',
+    subtitile: 'put your text',
+    options: ['one', 'two']
+
+    // JSX - JavaScript XML
+};var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h2',
         null,
-        'React Learning :'
+        app.title
+    ),
+    app.subtitile && React.createElement(
+        'p',
+        null,
+        app.subtitile
     ),
     React.createElement(
         'p',
         null,
-        'This is JSX from app.js chandra!'
+        app.options.length > 0 ? 'Here are in your options' : 'No Options'
     ),
     React.createElement(
         'ol',
@@ -37,33 +47,42 @@ var template = React.createElement(
 // render template
 
 var user = {
-    name: 'chandra',
-    age: 27,
-    location: 'pollachi'
+    name: 'Andrew',
+    age: 26,
+    location: 'Philadelphia'
 };
-
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    }
+}
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
-        'h2',
+        'h1',
         null,
-        user.name
+        user.name ? user.name : 'Anonymous'
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
-        'Age : ',
+        'Age: ',
         user.age
     ),
+    getLocation(user.location),
     React.createElement(
-        'p',
+        'h4',
         null,
-        'Location : ',
-        user.location
+        'Hello'
     )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

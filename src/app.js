@@ -1,10 +1,17 @@
 console.log('App.js is running!');
 
+var app = {
+    title: 'React Learning',
+    subtitile: 'put your text',
+    options: ['one','two']
+}
+
 // JSX - JavaScript XML
 var template = (
     <div>
-        <h2>React Learning :</h2>
-        <p>This is JSX from app.js chandra!</p>
+        <h2>{app.title}</h2>
+        {app.subtitile && <p>{app.subtitile}</p>}
+        <p>{app.options.length > 0 ? 'Here are in your options' : 'No Options'}</p>
         <ol>
             <li>Link One</li>
             <li>Link Two</li>
@@ -17,19 +24,25 @@ var template = (
 // render template
 
 var user = {
-    name : 'chandra',
-    age : 27,
-    location : 'pollachi'
-};
-
-var templateTwo = (
+    name: 'Andrew',
+    age: 26,
+    location: 'Philadelphia'
+  };
+  function getLocation(location) {
+    if (location) {
+      return <p>Location: {location}</p>;
+    }
+  }
+  var templateTwo = (
     <div>
-        <h2>{user.name}</h2>
-        <p>Age : {user.age}</p>
-        <p>Location : {user.location}</p>
+      <h1>{user.name ? user.name : 'Anonymous'}</h1>
+      {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
+      {getLocation(user.location)}
+      {<h4>Hello</h4>}
     </div>
-);
+  );
+
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
