@@ -19,32 +19,36 @@ const template = (
     </div>
 );
 
-// create user object name/age/location
-// use name/age/location in the template
-// render template
 
-const user = {
-  name: 'Andrew',
-  age: 26,
-  location: 'Philadelphia'
+// Events and Attributes
+let count = 0;
+
+const addOne = () => {
+  console.log('add one');
 };
 
-function getLocation(location) {
-  if (location) {
-    return <p>Location: {location}</p>;
-  }
-}
+const minusOne = () => {
+  console.log('minus one');
+};
+
+const reset = () => {
+  console.log('rest');
+};
 
 const templateTwo = (
   <div>
-    <h1>{user.name ? user.name : 'Anonymous'}</h1>
-    {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
-    {getLocation(user.location)}
-    {<h4>Hello</h4>}
+    <h1>Count {count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={minusOne}>-1</button>
+    <button onClick={reset}>reset</button>
   </div>
 );
+
+// Challenge
+// Make button "-1" - setup minusOne function and register - log "minusOne"
+// Make reset button "reset" - setup reset function - log "reset"
 
 
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
