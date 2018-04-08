@@ -20,35 +20,53 @@ const template = (
 );
 
 
-// Events and Attributes
+// Events and Attributes & Manual Data Binding
+
+// 1. Make button "+1" - setup addOne function and register - log "addOne".
+// 2. Make button "-1" - setup minusOne function and register - log "minusOne".
+// 3. Make reset button "reset" - setup reset function - log "reset"
+
 let count = 0;
 
 const addOne = () => {
-  console.log('add one');
+  // Add 1 from count - rerender
+  count++;
+  renderCounterApp();
 };
+
 
 const minusOne = () => {
-  console.log('minus one');
+  // Subtract 1 from count - rerender
+  count--;
+  renderCounterApp();
 };
+
 
 const reset = () => {
-  console.log('rest');
+  // Set count to 0 a rerender
+  count = 0;
+  renderCounterApp();
 };
-
-const templateTwo = (
-  <div>
-    <h1>Count {count}</h1>
-    <button onClick={addOne}>+1</button>
-    <button onClick={minusOne}>-1</button>
-    <button onClick={reset}>reset</button>
-  </div>
-);
-
-// Challenge
-// Make button "-1" - setup minusOne function and register - log "minusOne"
-// Make reset button "reset" - setup reset function - log "reset"
-
 
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+const renderCounterApp = () => {
+  const templateTwo = (
+    <div>
+      <h1>Count {count}</h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={minusOne}>-1</button>
+      <button onClick={reset}>reset</button>
+    </div>
+  );
+
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();
+
+
+
+
+
+
