@@ -8,7 +8,6 @@ var app = {
   options: []
 
   // JSX - JavaScript XML
-
   // 1. Create render function that renders the new jsx
   // 2. Call it right away
   // 3. Call it after options array added to
@@ -33,6 +32,8 @@ var onRemoveAll = function onRemoveAll() {
 };
 
 var appRoot = document.getElementById('app');
+
+// const numbers = [51,100,151];
 
 var render = function render() {
   var template = React.createElement(
@@ -66,16 +67,13 @@ var render = function render() {
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'Link One'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Link Two'
-      )
+      app.options.map(function (option) {
+        return React.createElement(
+          'li',
+          { key: option },
+          option
+        );
+      })
     ),
     React.createElement(
       'form',
