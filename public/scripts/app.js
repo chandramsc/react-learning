@@ -8,8 +8,35 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Header = function (_React$Component) {
-  _inherits(Header, _React$Component);
+var IndecisionApp = function (_React$Component) {
+  _inherits(IndecisionApp, _React$Component);
+
+  function IndecisionApp() {
+    _classCallCheck(this, IndecisionApp);
+
+    return _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).apply(this, arguments));
+  }
+
+  _createClass(IndecisionApp, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(Header, null),
+        React.createElement(Action, null),
+        React.createElement(Options, null),
+        React.createElement(Option, null),
+        React.createElement(AddOption, null)
+      );
+    }
+  }]);
+
+  return IndecisionApp;
+}(React.Component);
+
+var Header = function (_React$Component2) {
+  _inherits(Header, _React$Component2);
 
   function Header() {
     _classCallCheck(this, Header);
@@ -40,8 +67,8 @@ var Header = function (_React$Component) {
   return Header;
 }(React.Component);
 
-var Action = function (_React$Component2) {
-  _inherits(Action, _React$Component2);
+var Action = function (_React$Component3) {
+  _inherits(Action, _React$Component3);
 
   function Action() {
     _classCallCheck(this, Action);
@@ -53,7 +80,7 @@ var Action = function (_React$Component2) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        'div',
+        'button',
         null,
         'What should I do?'
       );
@@ -66,8 +93,8 @@ var Action = function (_React$Component2) {
 // Options -> Options component here
 
 
-var Options = function (_React$Component3) {
-  _inherits(Options, _React$Component3);
+var Options = function (_React$Component4) {
+  _inherits(Options, _React$Component4);
 
   function Options() {
     _classCallCheck(this, Options);
@@ -81,7 +108,7 @@ var Options = function (_React$Component3) {
       return React.createElement(
         'div',
         null,
-        'Option Componets here'
+        'Options Componets here'
       );
     }
   }]);
@@ -89,11 +116,37 @@ var Options = function (_React$Component3) {
   return Options;
 }(React.Component);
 
+// Option -> Option component here
+
+
+var Option = function (_React$Component5) {
+  _inherits(Option, _React$Component5);
+
+  function Option() {
+    _classCallCheck(this, Option);
+
+    return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
+  }
+
+  _createClass(Option, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        'Option component here'
+      );
+    }
+  }]);
+
+  return Option;
+}(React.Component);
+
 // AddOption -> AddOption component here
 
 
-var AddOption = function (_React$Component4) {
-  _inherits(AddOption, _React$Component4);
+var AddOption = function (_React$Component6) {
+  _inherits(AddOption, _React$Component6);
 
   function AddOption() {
     _classCallCheck(this, AddOption);
@@ -115,13 +168,4 @@ var AddOption = function (_React$Component4) {
   return AddOption;
 }(React.Component);
 
-var jsx = React.createElement(
-  'div',
-  null,
-  React.createElement(Header, null),
-  React.createElement(Action, null),
-  React.createElement(Options, null),
-  React.createElement(AddOption, null)
-);
-
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
