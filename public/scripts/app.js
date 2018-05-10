@@ -52,7 +52,7 @@ var Header = function (_React$Component2) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
+      // console.log(this.props);
       return React.createElement(
         "div",
         null,
@@ -83,11 +83,16 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
+    key: "handlePick",
+    value: function handlePick() {
+      alert("pickup");
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "button",
-        null,
+        { onClick: this.handlePick },
         "What should I do?"
       );
     }
@@ -110,14 +115,24 @@ var Options = function (_React$Component4) {
   }
 
   _createClass(Options, [{
+    key: "handleRemoveAll",
+    value: function handleRemoveAll() {
+      alert('remove all');
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
         null,
+        React.createElement(
+          "button",
+          { onClick: this.handleRemoveAll },
+          "Remove All"
+        ),
 
         // this.props.options.length
-        //this.props.options.map((option) => <p key={option}>{option}</p>) 
+        // this.props.options.map((option) => <p key={option}>{option}</p>) 
         this.props.options.map(function (option) {
           return React.createElement(Option, { key: option, optionText: option });
         })
@@ -154,8 +169,9 @@ var Option = function (_React$Component5) {
   return Option;
 }(React.Component);
 
-// AddOption -> AddOption component here
-
+// 1. Setup the form with text input and submit button
+// 2. Wire up onSubmit
+// 3. handleAddOption -> fetch the value typed -> if value, then alert
 
 var AddOption = function (_React$Component6) {
   _inherits(AddOption, _React$Component6);
@@ -167,12 +183,27 @@ var AddOption = function (_React$Component6) {
   }
 
   _createClass(AddOption, [{
+    key: "handleAddOption",
+    value: function handleAddOption(e) {
+      e.preventDefault();
+      var option = e.target.elements.option.value.trim();
+
+      if (option) {
+        alert(option);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
-        "div",
-        null,
-        "AddOption component here"
+        "form",
+        { onSubmit: this.handleAddOption },
+        React.createElement("input", { type: "text", name: "option" }),
+        React.createElement(
+          "button",
+          null,
+          "Add Option"
+        )
       );
     }
   }]);
