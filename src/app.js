@@ -1,3 +1,17 @@
+// Testing binding method start
+const obj = {
+  name : 'Chandra',
+  getName() {
+    return this.name;
+  }
+};
+
+const getName = obj.getName.bind(obj);
+
+console.log(getName());
+
+// end
+
 class IndecisionApp extends React.Component {
   render() {
 
@@ -46,9 +60,16 @@ class Action extends React.Component {
 // Render new p tag for each option (set text, set key)
 
 class Options extends React.Component {
-  handleRemoveAll() {
-    alert('remove all');
+
+  constructor(props) {
+    super(props);
+    this.handleRemoveAll = this.handleRemoveAll.bind(this);
   }
+
+  handleRemoveAll() {
+    console.log(this.props.options);
+  }
+
   render() {
     return (
       <div>
@@ -61,6 +82,7 @@ class Options extends React.Component {
       </div>
     );
   }
+
 }
 
 // Option -> Option component here
