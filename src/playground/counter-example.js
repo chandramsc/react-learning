@@ -1,3 +1,5 @@
+// count - setup default prop value to 0
+
 class Counter extends React.Component {
 
   constructor(props) {
@@ -6,7 +8,7 @@ class Counter extends React.Component {
     this.handleMinusOne = this.handleMinusOne.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.state = {
-      count : 0
+      count : props.count
     }
   }
   
@@ -52,8 +54,12 @@ class Counter extends React.Component {
 // Use console.log to print method name
 // Wire up onClick & bind in the constructor
 
+Counter.defaultProps = {
+  count: 100  //props.count will be set to 100
+}
 
-ReactDOM.render(<Counter/>, document.getElementById('app'));
+
+ReactDOM.render(<Counter count={0}/>, document.getElementById('app')); //props.count will remain 0
 
 
 // // Events and Attributes & Manual Data Binding
