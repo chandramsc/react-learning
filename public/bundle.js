@@ -70,16 +70,22 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person_js__ = __webpack_require__(2);
-// import { square, add } from './utils.js';
+// import subract  , { square, add } from './utils.js';
 
 // console.log("app.js file is working");
 // console.log(square(4));
 // console.log(add(100, 10));
+// console.log(subract(100, 50));
+
+// Note : use any name for default variable name (ex: original name is isSeniorCitizen, but you used isSenior)
 
 
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["b" /* isAdult */](18));
+console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["c" /* isAdult */](18));
 console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["a" /* canDrink */](20));
+console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["b" /* default */](64));
+
+// Setting the default export and function
+// Grap the default and call it
 
 /***/ }),
 /* 1 */,
@@ -87,8 +93,9 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["a" /* canDrink */](20));
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isAdult; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isSeniorCitizen; });
 // named export isAdult(18) - true if adult, otherwise false
 // names export canDrink(21) - true if 21 and over, otherwise false
 
@@ -97,6 +104,7 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["a" /* canDrink */](20));
 
 const isAdult = (age) => age >=18;
 const canDrink = (age) => age >=21;
+const isSeniorCitizen = (age) => age >=65;
 
 
 
