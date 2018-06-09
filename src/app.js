@@ -1,16 +1,13 @@
-// import subract  , { square, add } from './utils.js';
+// 1. Install validator
+// 2. import validator
+// 3. use
 
-// console.log("app.js file is working");
-// console.log(square(4));
-// console.log(add(100, 10));
-// console.log(subract(100, 50));
+// import validator from 'validator';
 
-// Note : use any name for default variable name (ex: original name is isSeniorCitizen, but you used isSenior)
-import isSenior, { isAdult, canDrink } from './person.js';
+// console.log(validator.isEmail('chandra@gmail.com'));
 
-console.log(isAdult(18));
-console.log(canDrink(20));
-console.log(isSenior(64));
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// Setting the default export and function
-// Grap the default and call it
+const template = React.createElement('p',{}, 'testing 123');
+ReactDOM.render(template, document.getElementById('app'));
