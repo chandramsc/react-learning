@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run build
+  C:\Program Files\nodejs\node.exe C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run build-babel
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw32\bin;C:\Program Files\Git\usr\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PuTTY\;C:\Users\chandra sekar\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\chandra sekar\AppData\Roaming\Composer\vendor\bin
@@ -3554,9 +3554,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3221225786
+  Exit code: 1
   Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c webpack --watch
+  Arguments: /d /s /c babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
   Directory: D:\React\react-learning
   Output:
   
