@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run build-babel
+  C:\Program Files\nodejs\node.exe C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add webpack-dev-server@4.12.0
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw32\bin;C:\Program Files\Git\usr\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PuTTY\;C:\Users\chandra sekar\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\chandra sekar\AppData\Roaming\Composer\vendor\bin
@@ -3553,18 +3553,12 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
-  Directory: D:\React\react-learning
-  Output:
-  
-      at ProcessTermError.Error (native)
-      at ProcessTermError.MessageError (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
-      at emitTwo (events.js:106:13)
-      at ChildProcess.emit (events.js:191:7)
-      at maybeClose (internal/child_process.js:886:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+  Error: Found incompatible module
+      at MessageError.Error (native)
+      at new MessageError (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at checkOne (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:62444:11)
+      at Object.check (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:62463:5)
+      at C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:22803:73
+      at next (native)
+      at step (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
+      at C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
