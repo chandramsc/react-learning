@@ -4,18 +4,47 @@ import Header from './Header';
 import Action from './Action';
 import Options from './Options';
 
-export default class IndecisionApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
-    this.state = {
-      options: []
-    };
-  }
+// pull the state out of constructor
+// convert all 4 event handlers to class properties (arrow functions)
+// delete the constructor completely
+// start with class properties and end with method
 
+export default class IndecisionApp extends React.Component {
+
+  state = {
+    options: []
+  };
+
+  handleDeleteOptions = () => {
+    this.setState(() => ({
+      options: []
+    }));
+  };
+
+  handleDeleteOption = (optionToRemove) => {
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => optionToRemove !== option)
+    }));
+  };
+
+  handlePick = () => {
+    const randomNum = Math.floor(Math.random() * this.state.options.length);
+    const option = this.state.options[randomNum];
+    alert(option);
+  };
+
+  handleAddOption = (option) => {
+    if (!option) {
+      return 'Enter valid value to add item';
+    } else if (this.state.options.indexOf(option) > -1) {
+      return 'This option already exists';
+    }
+
+    this.setState((prevState) => ({
+      options: prevState.options.concat(option)
+    }));
+  };
+  
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');
@@ -39,30 +68,6 @@ export default class IndecisionApp extends React.Component {
     console.log("componentWillUnmount");
   }
 
-  handleDeleteOptions() {
-    this.setState(() => ({ options: [] }));
-  }
-  handleDeleteOption(optionToRemove) {
-    this.setState((prevState) => ({
-      options: prevState.options.filter((option) => optionToRemove !== option)
-    }));
-  }
-  handlePick() {
-    const randomNum = Math.floor(Math.random() * this.state.options.length);
-    const option = this.state.options[randomNum];
-    alert(option);
-  }
-  handleAddOption(option) {
-    if (!option) {
-      return 'Enter valid value to add item';
-    } else if (this.state.options.indexOf(option) > -1) {
-      return 'This option already exists';
-    }
-
-    this.setState((prevState) => ({
-      options: prevState.options.concat(option)
-    }));
-  }
   render() {
     const subtitle = 'Put your life in the hands of a computer';
 
